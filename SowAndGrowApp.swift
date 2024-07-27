@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SowAndGrowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
+             //   .modelContainer(for: Item.self)
+             .modelContainer(for: [Item.self, Favorite.self])
         }
     }
 }
