@@ -66,6 +66,9 @@ struct AddNewItem: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
             }
+            .scrollContentBackground(.hidden) //modifier is needed to set custom BackgroundColor
+            .background(Color(red: 245/255, green: 245/255, blue: 245/255))
+        
             .navigationTitle("Neue Aufgabe erstellen")
             .navigationBarTitleDisplayMode(.inline)
     }

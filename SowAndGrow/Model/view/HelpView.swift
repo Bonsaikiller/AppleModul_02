@@ -15,24 +15,24 @@ struct HelpView: View {
         List {
             Section(header: Text("So nutzt Du \"Aufgaben\":"))  {
                 Label {
-                    Text("Über das Plus in der Tabbar erstellst Du neue Einträge")
+                    Text("Über das Plus in der Tabbar erstellst Du neue Einträge.")
                 } icon: {
                     Image(systemName: "plus.circle.fill")
                 }
                 
                 Label {
-                    Text("Wische nach Rechts um eine Aufgabe als erledigt zu markieren, nach Links um sie zu löschen")
+                    Text("Wische nach rechts um eine Aufgabe als erledigt zu markieren, nach links um sie zu löschen.")
                 } icon: {
                     Image(systemName: "hand.point.up.left.fill")
                 }
                 
             Label {
-                Text("Du kannst erledigte Aufgaben auch wieder zurück in die ToDo's verschieben")
+                Text("Du kannst erledigte Aufgaben auch wieder zurück zu in \"Offen\" verschieben.")
             } icon: {
                 Image(systemName: "arrowshape.up.fill")
             }
                 Label {
-                    Text("Möchtest Du eine Pflanze für weitere Aufgaben speichern, markiere sie als Favorit")
+                    Text("Möchtest Du eine Pflanze für weitere Aufgaben speichern, markiere sie als Favorit.")
                 } icon: {
                     Image(systemName: "heart.fill")
                 }
@@ -41,20 +41,20 @@ struct HelpView: View {
 
                 Section(header: Text("So nutzt Du \"Favoriten\":"))  {
                     Label {
-                        Text("Wähle eine Pflanze aus der Favoritenliste um mit eine neue Aufgabe zu erstellen")
+                        Text("Wähle eine Pflanze aus der Favoritenliste um damit eine neue Aufgabe zu erstellen.")
                     } icon: {
                         Image(systemName: "plus")
                     }
                     
                     Label {
-                        Text("Zum Entfernen der Pflanze aus den Favoriten, wische nach Links")
+                        Text("Zum Entfernen der Pflanze aus den Favoriten, wische nach links.")
                     } icon: {
                         Image(systemName: "hand.point.up.left.fill")
                     }
                     
                 }  
                 .font(.system(size: 14, weight: .regular))
-                .padding(.top,1)
+                .padding(.top,2)
     
             Button(action: {
                 dismiss()

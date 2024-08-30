@@ -57,7 +57,6 @@ struct ItemListView: View {
                     }
 
                     .headerProminence(.increased)
-                    
                 }
                 .scrollContentBackground(.hidden) // is needed to set custom background
                 .background(Color(red: 245/255, green: 245/255, blue: 245/255))

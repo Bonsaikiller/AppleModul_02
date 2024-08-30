@@ -21,6 +21,20 @@ struct SingleItemView: View {
                 return Color.black
             }
         }
+        
+        // to check if task is overdue
+         let datePicked = item.date
+            var dateGone: Bool {
+                  var a = false
+                   if (datePicked < Date.now) {
+                        a = true
+                     //  print(Date.now)
+                     //  print(datePicked)
+                     //  print (a)
+                        }
+                        return a
+                    }
+        
         NavigationLink(value: item) {
                 HStack(alignment: .center) {
                    
@@ -46,8 +60,8 @@ struct SingleItemView: View {
                                 .italic()
                                 .foregroundColor(.accentColor)
                         }
-                        
-                        if(item.priority == true) && (item.isDone == false) {
+                       // If item is prioritized OR the date is overdue text will be displayed in red UNLESS the task was marked as done
+                        if((item.priority == true) || (dateGone == true)) && (item.isDone == false) {
                             Text(item.task.rawValue + " bis " + ("\(item.date.formatted(date: .abbreviated, time: .omitted))"))
                                 .font(.system(size: 14, weight: .bold))
                                 .foregroundColor(.red)
