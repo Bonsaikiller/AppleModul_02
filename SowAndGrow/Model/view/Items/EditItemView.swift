@@ -11,9 +11,10 @@ import SwiftData
 struct EditItemView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
+    
     @Bindable var item: Item // two way Binding to read and display updated content
     @Bindable var favorite: Favorite
-//  var favorite: Favorite
+    
     var body: some View {
         
         List {
@@ -34,17 +35,13 @@ struct EditItemView: View {
                     .tint(.accentColor)
                 DatePicker("Fällig", selection: $item.date, in: Date.now..., // no past date allowed,
                            displayedComponents: .date)  // no time displayed
-                
-                //   Toggle("Favorit", isOn: $item.isFavorite) .tint(.accentColor)
-                
+
             }
             HStack {
                 if(item.isFavorite == false) {
                     Button(action:  {
                         item.isFavorite = true
                         addFavorite()
-                        //addItem()
-                        // dismiss()
                     }) {
                         Text ("Pflanze zu Favoriten hinzufügen")
                             .font(.system(size: 16, weight: .medium))
@@ -84,28 +81,6 @@ struct EditItemView: View {
         let fav = Favorite(name: item.name, typeOfPlant: item.typeOfPlant )
         modelContext.insert(fav)
     }
-  /*
-    func addItem() {
-            if(item.isFavorite == true) {
-                let fav = Favorite(name: item.name, typeOfPlant: item.typeOfPlant )
-                modelContext.insert(fav)
-    
-                //item.hasFavorite.append(fav)
-               /*
-                let favorite = Favorite(name: item.name, typeOfPlant: item.typeOfPlant)
-                    modelContext.insert(favorite) */
-            }
-        }
-   */
-    
-    // nice try
-/*    func removeFavorite(){
-        if((item.isFavorite == false) && (item.name == favorite.name)) {
-            favorite.isFavorite = false
-        }
-       // item.hasFavorite.removeAll()
-        } */
-    
 }
 
     /*

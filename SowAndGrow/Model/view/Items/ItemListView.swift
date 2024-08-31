@@ -11,7 +11,7 @@ import SwiftData
 struct ItemListView: View {
     
   @Environment(\.modelContext) var modelContext
-  @State private var path = [Item]() //path = an Array of Tasks
+  @State private var path = [Item]()
     
   //tried to create a sorting by date and priority, but no bools allowed
     @Query(sort: [SortDescriptor (\Item.date),

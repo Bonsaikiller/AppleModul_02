@@ -79,14 +79,7 @@ struct SingleItemView: View {
                                 .foregroundColor(.red)
                         }
                     }
-                 /*
-                    else if (item.isFavorite == true) {
-                            Image(systemName: "heart.fill")
-                            //.resizable()
-                            .font(.system(size: 20))
-                            .padding(.trailing, 10)
-                            .foregroundColor(.accentColor)
-                    }  */
+
             }
 
                 .foregroundColor(textColor)
@@ -97,16 +90,5 @@ struct SingleItemView: View {
 
 /*
  #Preview {
- do {
- let config = ModelConfiguration(isStoredInMemoryOnly: true)
- let container = try ModelContainer(for: Item.self,
- configurations: config)
- let example = Item(name: "BlackCherry", typeOfPlant: "Tomate", task: .sow, priority: true, hasFavorite: Favorite(name:"BlackCherry"))
- return SingleItemView(item: example)
- .modelContainer(container)
- } catch {
- fatalError("didn't work")
- }
- 
  }
  */

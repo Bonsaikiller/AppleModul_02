@@ -37,6 +37,7 @@ struct AddNewItem: View {
                     DatePicker("Fällig", selection: $item.date, in: Date.now..., displayedComponents: .date)
                         .tint(.accentColor)
                 }
+                
                 Button(action:  {
                     addItem()
                     dismiss()
@@ -52,17 +53,18 @@ struct AddNewItem: View {
                 }
                 .listRowBackground(Color.clear)
                 
+                //resets everything and redirects to the previous view
                 Button(action: {
                     item.priority = false
                     item.task = .plant
                     item.date = Date.now
                     dismiss()
-                }) {
-                    Text("abbrechen")
-                        .font(.system(size: 16))
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                }
+                    }) {
+                        Text("abbrechen")
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                    }
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
             }
@@ -73,14 +75,10 @@ struct AddNewItem: View {
             .navigationBarTitleDisplayMode(.inline)
     }
 
+ //creates a new Item for Aufgabenliste
  func addItem() {
      let newItem = Item(name: favorite.name, typeOfPlant: favorite.typeOfPlant, task: item.task, priority: item.priority, date: item.date,isFavorite: true)
          modelContext.insert(newItem)
-
-   /*  if(item.isFavorite == true) {
-         let newFav = Favorite(name: item.name, typeOfPlant: item.typeOfPlant)
-         modelContext.insert(newFav)
-     } */
     }
  }
 

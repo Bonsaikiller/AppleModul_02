@@ -13,7 +13,7 @@ struct FavoriteListView: View {
     @Query(sort: \Favorite.name) var favorite: [Favorite]
     @State private var path = [Favorite]()
     @State private var showHelp = false
-   var item: Item
+    var item: Item
 
     
     var body: some View {
@@ -24,9 +24,7 @@ struct FavoriteListView: View {
                 List {
                     Section("") {
                         ForEach(favorite) { favorite in
-                          //  if(favorite.isFavorite == true) {
                                 SingleFavoriteView(favorite: favorite)
-                            //}
                         }
                         .onDelete(perform: deleteItem(_:))
                     }

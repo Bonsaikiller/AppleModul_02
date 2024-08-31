@@ -15,7 +15,7 @@ struct TabBarView: View {
     @Query var item: [Item]
     @Query var favorite: [Favorite]
 
-    // Since the AddItem Tab is implemented by the use of isPresented as .sheet, these settings are necessary to redirect the User, when finished with adding an Item, to the last used Tab (either the ListView oder FavoriteView). Otherwise he'd be stuck with the AddItemView: onChange Function LOC: 50
+    // Since the AddItem Tab is implemented by the use of isPresented as .sheet, these settings are necessary to redirect the User, when finished with adding an Item, to the last used Tab (either the ListView oder FavoriteView). Otherwise he'd be stuck with the AddItemView - see onChange Function LOC: 50
     @State private var tagSelection = 1
     @State private var oldSelection = 1
     @State private var sheetIsPresented = false

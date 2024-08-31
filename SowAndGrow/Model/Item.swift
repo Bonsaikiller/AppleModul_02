@@ -20,7 +20,6 @@ class Item {
     var date: Date
     var isFavorite: Bool // if set to true, new Object of Type Favorite will be created
     
-  //  var hasFavorite = [Favorite]()
     
     init(id: UUID = UUID(), name: String = "", typeOfPlant: String = "", task: Task = .choose, priority: Bool = false, isDone: Bool = false , date: Date = .now, isFavorite: Bool = false) {
         self.id = id
@@ -34,7 +33,6 @@ class Item {
     }
 }
 
-// no idea what Codable is used for, but Swift asked me to put it there, so here it is...
 enum Task: String, Codable, CaseIterable, Identifiable {
     var id: Self {self}
     case choose = "Wähle eine Aktion"

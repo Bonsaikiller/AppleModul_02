@@ -128,26 +128,15 @@ struct AddItemView: View {
             }
         }
            
-      //  .navigationTitle("Aufgabe erstellen")
-      //  .navigationBarTitleDisplayMode(.inline)
     }
     // adds the new Item to the Model Context
     func addItem() {
         modelContext.insert(item)
-        //   path.append(item)
-        //  path = [item]
-        
+       
         // if an Item is marked as Favorite a new Favorite Object is created, asinging the values of name and typeOfPlant from the Item Object to the new Favorite Object...
         if (item.isFavorite == true) {
             let fav = Favorite(name: item.name, typeOfPlant: item.typeOfPlant)
-            //, isFavorite: item.isFavorite)
                 modelContext.insert(fav)
-            
-          //  item.hasFavorite.append(fav)
-            /*
-             let favorite = Favorite(name: item.name, typeOfPlant: item.typeOfPlant)
-             modelContext.insert(favorite)
-             } */
         }
     }
 }
